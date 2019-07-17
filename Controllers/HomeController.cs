@@ -20,6 +20,11 @@ namespace MvcMovie.Controllers
             return View();
         }
 
+        public string Test()
+        {
+            return "Hi!!!";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

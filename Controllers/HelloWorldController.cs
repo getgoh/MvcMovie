@@ -13,6 +13,11 @@ namespace MvcMovie.Controllers
             return "This is my default action...";
         }
 
+        public IActionResult Test1()
+        {
+            return View();
+        }
+
         // 
         // GET: /HelloWorld/Welcome/ 
 

@@ -12,7 +12,11 @@ namespace MvcMovie.Models
             : base(options)
         {
         }
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+            => modelBuilder.ForNpgsqlUseIdentityColumns();
+
 
         public DbSet<MvcMovie.Models.Movie> Movie { get; set; }
     }
-}
+} 

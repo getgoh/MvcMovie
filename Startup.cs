@@ -35,11 +35,14 @@ namespace MvcMovie
             });
 
             services.AddDbContext<MvcMovieContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("MovieContext")));
+                // options.UseSqlite(Configuration.GetConnectionString("MovieContext"))
+                    options.UseNpgsql(Configuration.GetConnectionString("MovieContextPG"))
+                );
 
  
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -63,7 +66,7 @@ namespace MvcMovie
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Movies}/{action=Index}/{id?}");
             });
         }
     }

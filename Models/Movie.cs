@@ -6,6 +6,8 @@ namespace MvcMovie.Models
 {
     public class Movie
     {
+        [Key]
+       [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Title { get; set; }
 
